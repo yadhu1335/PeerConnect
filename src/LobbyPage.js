@@ -59,25 +59,27 @@ const LobbyPage = ({ onGo }) => {
   }, [stream]);
 
   return (
-    <div className="lobby-container">
+    <div className="lobby-container sky-blue">
       <div className="centered-content">
         <div className="left-section">
           <div className="input-section">
             <input
               type="text"
               placeholder="Enter Username"
+              className="input-field"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="text"
               placeholder="Enter Room ID"
+              className="input-field"
               value={roomID}
               onChange={(e) => setRoomID(e.target.value)}
             />
           </div>
           <div className="button-section">
-            <button onClick={handleGoClick}>Go</button>
+            <button onClick={handleGoClick} className="go-button">Go</button>
           </div>
         </div>
         <div className="right-section">
@@ -87,8 +89,8 @@ const LobbyPage = ({ onGo }) => {
           </div>
           {/* Control Buttons */}
           <div className="control-buttons">
-            <button onClick={handleToggleCamera}>{isCameraMuted ? 'Unmute Camera' : 'Mute Camera'}</button>
-            <button onClick={handleToggleMic}>{isMicMuted ? 'Unmute Mic' : 'Mute Mic'}</button>
+            <button onClick={handleToggleCamera} className="control-button">{isCameraMuted ? 'Unmute Camera' : 'Mute Camera'}</button>
+            <button onClick={handleToggleMic} className="control-button">{isMicMuted ? 'Unmute Mic' : 'Mute Mic'}</button>
           </div>
         </div>
       </div>
